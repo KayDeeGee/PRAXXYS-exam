@@ -1,6 +1,7 @@
 <template>
     <div>
         <h2>Most Popular</h2>
+        
     </div>
 </template>
 

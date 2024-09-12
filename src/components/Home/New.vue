@@ -1,6 +1,6 @@
 <template>
     <div>
-        What's New?
+        
     </div>
 </template>
 
