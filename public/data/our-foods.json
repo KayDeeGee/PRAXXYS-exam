@@ -1,0 +1,58 @@
+[
+    {
+        "name": "Chicken Salad",
+        "category": "Chicken",
+        "imgUrl": "img/chicken-salad.png",
+        "price": 172,
+        "rating": 4.5
+    },
+    {
+        "name": "Steak Fries Veggies",
+        "category": "Meat",
+        "imgUrl": "img/steak-veggies.png",
+        "price": 175,
+        "rating": 4.5
+    },
+    {
+        "name": "Sorvetes Primavera",
+        "category": "Dessert",
+        "imgUrl": "img/sorvetes.png",
+        "price": 185,
+        "rating": 5
+    },
+    {
+        "name": "Fried Chicken",
+        "category": "Chicken",
+        "imgUrl": "img/fried-chicken.png",
+        "price": 175,
+        "rating": 4
+    },
+    {
+        "name": "Chicken Salad",
+        "category": "Chicken",
+        "imgUrl": "img/chicken-salad.png",
+        "price": 172,
+        "rating": 4.5
+    },
+    {
+        "name": "Steak Fries Veggies",
+        "category": "Meat",
+        "imgUrl": "img/steak-veggies.png",
+        "price": 175,
+        "rating": 4.5
+    },
+    {
+        "name": "Sorvetes Primavera",
+        "category": "Dessert",
+        "imgUrl": "img/sorvetes.png",
+        "price": 185,
+        "rating": 5
+    },
+    {
+        "name": "Fried Chicken",
+        "category": "Chicken",
+        "imgUrl": "img/fried-chicken.png",
+        "price": 175,
+        "rating": 4
+    }
+]

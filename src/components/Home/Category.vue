@@ -28,7 +28,7 @@ export default {
 
         const fetchCategories = async () => {
             try {
-                const response = await fetch('/data/categories.json'); // Fetch from public/data
+                const response = await fetch('/data/category-card.json'); 
                 categories.value = await response.json();
             } catch (error) {
                 console.error('Error fetching categories:', error);

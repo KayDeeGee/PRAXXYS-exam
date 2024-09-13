@@ -1,0 +1,22 @@
+[
+    {
+        "name": "Chicken",
+        "imgUrl": "img/cat-1.png",
+        "totalRecipes": 9
+    },
+    {
+        "name": "Seafoods",
+        "imgUrl": "img/cat-2.png",
+        "totalRecipes": 6
+    },
+    {
+        "name": "Meat",
+        "imgUrl": "img/cat-2.png",
+        "totalRecipes": 8
+    },
+    {
+        "name": "Dessert",
+        "imgUrl": "img/cat-2.png",
+        "totalRecipes": 10
+    }
+]

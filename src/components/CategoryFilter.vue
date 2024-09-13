@@ -1,12 +1,7 @@
 <template>
     <swiper :slidesPerView="'auto'" :spaceBetween="8" :modules="modules" class="ion-padding-start">
-        <swiper-slide>
-            <div class="tab-item tab-active">
-                All
-            </div>
-        </swiper-slide>
-        <swiper-slide v-for="category in categories">
-            <div class="tab-item">{{ category.name }}</div>
+        <swiper-slide  v-for="category in categories" :key="category">
+            <div class="tab-item" :class="{ 'tab-active': category === 'All' }">{{ category }}</div>
         </swiper-slide>
     </swiper>
 </template>
