@@ -1,21 +1,18 @@
 <template>
-    <button class="custom-fab" @click="handleClick">
+    <button class="custom-fab" @click="() => router.push('/our-foods')">
        <h1>Order Now!</h1>
     </button>
   </template>
   
   <script>
   import { defineComponent } from 'vue';
+  import { useRouter } from 'vue-router';
   
   export default defineComponent({
-    name: 'CustomFab',
-    components: {
-    },
-    methods: {
-      handleClick() {
-        console.log('FAB button clicked');
-      },
-    },
+    setup() {
+      const router = useRouter();
+      return { router };
+    }    
   });
   </script>
   
