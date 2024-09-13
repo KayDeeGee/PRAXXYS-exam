@@ -15,12 +15,12 @@
 				</ion-row>
 			</ion-grid>
 			<ion-searchbar></ion-searchbar>
-			<SpecialOffers/>
-			<Category/>
-			<New/>
-			<Popular/>
+			<SpecialOffers />
+			<Category />
+			<New />
+			<Popular />
+			<CustomFAB/>
 		</ion-content>
-
 	</ion-page>
 </template>
 
@@ -29,6 +29,7 @@ import { IonPage, IonMenu, IonHeader, IonToolbar, IonTitle, IonContent } from '@
 import { defineComponent } from 'vue';
 import { MenuContent, MenuButton } from '@/components/Menu';
 import { Category, New, SpecialOffers, Popular } from '@/components/Home';
+import CustomFAB from '@/components/CustomFAB.vue';
 
 export default defineComponent({
 	components: {
@@ -39,7 +40,8 @@ export default defineComponent({
 		IonTitle,
 		IonToolbar,
 		MenuContent, MenuButton,
-		Category, New, SpecialOffers, Popular
+		Category, New, SpecialOffers, Popular,
+		CustomFAB
 	},
 
 });
