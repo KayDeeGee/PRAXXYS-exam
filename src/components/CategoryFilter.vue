@@ -1,9 +1,12 @@
 <template>
-    <swiper :slidesPerView="'auto'" :spaceBetween="16"  :modules="modules" class="ion-padding-start">
-        <swiper-slide v-for="category in categories">
-            <div class="overlay-text">
-                <div>{{ category.name }}</div>
+    <swiper :slidesPerView="'auto'" :spaceBetween="8" :modules="modules" class="ion-padding-start">
+        <swiper-slide>
+            <div class="tab-item tab-active">
+                All
             </div>
+        </swiper-slide>
+        <swiper-slide v-for="category in categories">
+            <div class="tab-item">{{ category.name }}</div>
         </swiper-slide>
     </swiper>
 </template>
@@ -13,6 +16,7 @@ import { ref, onMounted } from 'vue';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import { FreeMode } from 'swiper/modules';
 
+import 'swiper/css';
 import 'swiper/css/free-mode';
 
 export default {
@@ -22,7 +26,7 @@ export default {
 
         const fetchCategories = async () => {
             try {
-                const response = await fetch('/data/categories.json'); // Fetch from public/data
+                const response = await fetch('/data/categories.json'); 
                 categories.value = await response.json();
             } catch (error) {
                 console.error('Error fetching categories:', error);
@@ -45,4 +49,19 @@ export default {
 .swiper-slide {
     width: auto;
 }
+
+.tab-item {
+    padding: 10px 16px;
+    border-radius: 8px;
+    background-color: #DEE2E6;
+    color: #6C757D;
+    font-weight: 700;
+    border-radius: 1rem;
+}
+
+.tab-active {
+    background-color: #D71921;
+    color: white
+}
+
 </style>

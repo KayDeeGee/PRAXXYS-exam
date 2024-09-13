@@ -3,6 +3,7 @@
         <ion-content >
             <ion-searchbar ></ion-searchbar>
             <CategoryFilter />
+            
         </ion-content>
     </ion-page>
 </template>
