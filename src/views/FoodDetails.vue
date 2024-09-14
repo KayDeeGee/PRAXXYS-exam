@@ -3,8 +3,10 @@
         <ion-content class="ion-padding">
             <ion-row>
                 <ion-col size="auto" @click="router.back()">Back</ion-col>
-                <ion-col>{{ food.category }}</ion-col>
-                <ion-col class="ion-align-items-end" size="auto">shop icon</ion-col>
+                <ion-col> <h1>{{ food.category }}</h1></ion-col>
+                <ion-col class="ion-align-items-end" size="auto">
+                    <ion-icon :icon="bagHandle" @click=""></ion-icon>
+                </ion-col>
             </ion-row>
             <div>
                 <div class="custom-card">
@@ -37,7 +39,7 @@ import { useRouter } from 'vue-router';
 import { useFoodStore } from '@/stores/useFoodStore';
 
 import { IonPage, IonMenu, IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/vue';
-import { addOutline, removeOutline } from 'ionicons/icons';
+import { addOutline, removeOutline, bagHandle } from 'ionicons/icons';
 
 import Beverages from '@/components/FoodDetails/Beverages.vue';
 import AddOn from '@/components/FoodDetails/AddOn.vue'
@@ -74,7 +76,7 @@ export default {
             food,
             router,
             quantity,
-            addOutline, removeOutline,
+            addOutline, removeOutline, bagHandle,
             updateQuantity
         }
     }
