@@ -21,10 +21,16 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import('@/views/OurFoods.vue'),
   },
   {
+    path: '/food-details',
+    name: 'FoodDetails',
+    component: () => import('@/views/FoodDetails.vue'),
+    props: true
+  },
+  {
     path: "/test",
     name: "TestPage",
     component: TestPage,
-  },
+  }
 ];
 
 const router = createRouter({

@@ -13,7 +13,7 @@
         </ion-content>
     </ion-page>
 </template>
-
+  
 <script>
 import { IonMenu, IonPage } from '@ionic/vue';
 import { defineComponent, onMounted, ref } from 'vue';
@@ -30,7 +30,7 @@ export default defineComponent({
         const foods = ref([]);
         const fetchFoods = async () => {
             try {
-                const response = await fetch('/data/our-foods.json'); // Fetch from public/data
+                const response = await fetch('/data/our-foods.json'); 
                 foods.value = await response.json();
             } catch (error) {
                 console.error('Error fetching foods:', error);

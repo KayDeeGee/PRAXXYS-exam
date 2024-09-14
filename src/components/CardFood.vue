@@ -1,5 +1,5 @@
 <template>
-    <div class="custom-card">
+    <div class="custom-card" @click="goToFoodDetails(food)">
         <div class="img-container">
             <img :src="`${food.imgUrl}`" alt="Image not found">
         </div>
@@ -15,13 +15,28 @@
 </template>
 
 <script>
+import { useFoodStore } from '@/stores/useFoodStore';
+import { useRouter } from 'vue-router';
+
 export default {
     props: {
         food: {
             type: Object,
             required: true
         }
+    },
+    setup() {
+        const foodStore = useFoodStore();
+        const router = useRouter();
+        function goToFoodDetails(food) {
+            foodStore.setFood(food);
+            router.push({ name: 'FoodDetails' });
+        }
+        return {
+            goToFoodDetails
+        };
     }
+
 };
 </script>
 

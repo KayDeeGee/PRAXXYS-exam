@@ -1,5 +1,5 @@
 <template>
-    <button class="custom-fab" @click="() => router.push('/our-foods')">
+    <button class="custom-fab" @click="() => router.push({name: 'OurFoods'})">
        <h1>Order Now!</h1>
     </button>
   </template>

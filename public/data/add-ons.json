@@ -1,0 +1,16 @@
+[
+    {
+        "id": 0,
+        "name": "Tomato Sauce",
+        "category": "Sauce",
+        "imgUrl": "img/sauce.png",
+        "price": 49
+    },
+    {
+        "id": 1,
+        "name": "Sauce",
+        "category": "Rice",
+        "imgUrl": "img/rice.png",
+        "price": 25
+    }
+]
