@@ -18,19 +18,25 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: "/our-foods",
     name: "OurFoods",
-    component: () => import('@/views/OurFoods.vue'),
+    component: () => import("@/views/OurFoods.vue"),
   },
   {
-    path: '/food-details',
-    name: 'FoodDetails',
-    component: () => import('@/views/FoodDetails.vue'),
-    props: true
+    path: "/food-details",
+    name: "FoodDetails",
+    component: () => import("@/views/FoodDetails.vue"),
+    props: true,
+  },
+  {
+    path: "/checkout",
+    name: "Checkout",
+    component: () => import("@/views/Checkout.vue"),
+    props: true,
   },
   {
     path: "/test",
     name: "TestPage",
     component: TestPage,
-  }
+  },
 ];
 
 const router = createRouter({

@@ -1,10 +1,11 @@
 <template>
     <ion-page>
         <ion-content>
-            <ion-searchbar></ion-searchbar>
+            <MenuSecond menuBtn="true" headerLabel="Our Foods" icon="bagHandle" class="ion-no-padding ion-padding-horizontal ion-padding-top" />
+            <ion-searchbar class="ion-no-padding ion-padding-horizontal"></ion-searchbar>
             <CategoryFilter />
             <ion-grid class="ion-padding">
-                <ion-row>
+                <ion-row class="food-cards">
                     <ion-col v-for="food in foods" size="6">
                         <CardFood :food="food" />
                     </ion-col>
@@ -17,13 +18,17 @@
 <script>
 import { IonMenu, IonPage } from '@ionic/vue';
 import { defineComponent, onMounted, ref } from 'vue';
+
+import { bagHandle } from 'ionicons/icons';
 import CategoryFilter from '@/components/CategoryFilter.vue';
 import CardFood from '@/components/CardFood.vue';
+import MenuSecond from '@/components/Menu/MenuSecond.vue';
 
 export default defineComponent({
     components: {
         IonMenu,
         IonPage,
+        MenuSecond,
         CategoryFilter, CardFood
     },
     setup() {
@@ -40,15 +45,14 @@ export default defineComponent({
         onMounted(() => {
             fetchFoods();
         });
-        return { foods }
+        return { foods, bagHandle}
     }
 
 });
 </script>
 
-<style scoped>
-ion-col {
+<style  scoped>
+.food-cards ion-col {
     padding: 3px;
 }
-
 </style>

@@ -1,13 +1,7 @@
 <template>
     <ion-page>
         <ion-content class="ion-padding">
-            <ion-row>
-                <ion-col size="auto" @click="router.back()">Back</ion-col>
-                <ion-col> <h1>{{ food.category }}</h1></ion-col>
-                <ion-col class="ion-align-items-end" size="auto">
-                    <ion-icon :icon="bagHandle" @click=""></ion-icon>
-                </ion-col>
-            </ion-row>
+            <MenuSecond :headerLabel="food.category" icon="bagHandle" class="ion-padding-bottom"/>
             <div>
                 <div class="custom-card">
                     <img class="img-container" :src="food.imgUrl" alt="">
@@ -39,8 +33,9 @@ import { useRouter } from 'vue-router';
 import { useFoodStore } from '@/stores/useFoodStore';
 
 import { IonPage, IonMenu, IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/vue';
-import { addOutline, removeOutline, bagHandle } from 'ionicons/icons';
+import { addOutline, removeOutline, bagHandle, chevronBack } from 'ionicons/icons';
 
+import MenuSecond from '@/components/Menu/MenuSecond.vue';
 import Beverages from '@/components/FoodDetails/Beverages.vue';
 import AddOn from '@/components/FoodDetails/AddOn.vue'
 import AddToBagFAB from '@/components/AddToBagFAB.vue';
@@ -53,6 +48,7 @@ export default {
         IonPage,
         IonTitle,
         IonToolbar,
+        MenuSecond,
         Beverages,
         AddOn,
         AddToBagFAB
@@ -76,7 +72,7 @@ export default {
             food,
             router,
             quantity,
-            addOutline, removeOutline, bagHandle,
+            addOutline, removeOutline, bagHandle, chevronBack,
             updateQuantity
         }
     }
@@ -109,7 +105,7 @@ img {
     color: #D71921;
 }
 
-ion-icon {
+.quantity-buttons ion-icon {
     background: #d4d3d9;
     color: #D71921;
     border-radius: 14px;

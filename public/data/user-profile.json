@@ -1,0 +1,18 @@
+{
+    "id": 0,
+    "name": "Chou Tzuyu",
+    "contactNo": "+63 912 345 6789",
+    "email": "chou.tzu-yu@gmail.commm",
+    "address": [
+        {
+            "id": "0",
+            "addressLabel": "My Home Address",
+            "addressString": "No. 21 St. Agustin Street, Brgy. De Jose Delgado City 2234 Philippines"
+        },
+        {
+            "id": "1",
+            "addressLabel": "Work/Office",
+            "addressString": "3rd flr Anyeong Bldg. Seareal St. Joaqin City 3456 Philippines"
+        }
+    ]
+}

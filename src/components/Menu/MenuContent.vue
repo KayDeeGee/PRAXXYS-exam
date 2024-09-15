@@ -1,10 +1,5 @@
 <template>
     <ion-menu content-id="main-content">
-        <!-- <ion-header>
-            <ion-toolbar>
-                <ion-title>Menu Content</ion-title>
-            </ion-toolbar>
-        </ion-header> -->
         <ion-content class="">
             <div>
                 <ion-grid>
@@ -66,19 +61,11 @@
     </ion-menu>
 </template>
 
-<script>
+<script setup>
 import { IonMenu, IonHeader, IonToolbar, IonTitle, IonContent, } from '@ionic/vue';
 import { defineComponent } from 'vue';
 
-export default defineComponent({
-    components: {
-        IonContent,
-        IonHeader,
-        IonToolbar,
-        IonMenu,
-        IonTitle,
-    },
-});
+
 </script>
 
 <style scoped>
