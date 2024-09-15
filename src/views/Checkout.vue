@@ -1,19 +1,16 @@
 <template>
     <ion-page>
         <ion-content>
-            <MenuSecond headerLabel="Checkout"/>
-            <ion-row class="ion-padding">
-                <!-- <ion-col size="auto" @click="router.back()">Back</ion-col> -->
-                <ion-col class="ion-align-items-end" size="auto">
-                </ion-col>
-            </ion-row>
+            <MenuSecond headerLabel="Checkout" class="ion-padding"/>
+      
             <div class="sliding-card-group">
                 <SlidingCards :data="userDetails" type="user" />
                 <ion-radio-group class="sliding-card-group">
                     <SlidingCards v-for="address in addressDetails" :data="address" type="address" />
                 </ion-radio-group>
             </div>
-            
+            <Orders />
+            <PaymentOption />
         </ion-content>
         <ion-footer>
             <ion-toolbar>
@@ -39,6 +36,8 @@ import { ref } from 'vue';
 
 import SlidingCards from '@/components/Checkout/SlidingCards.vue';
 import MenuSecond from '@/components/Menu/MenuSecond.vue';
+import Orders from '@/components/Checkout/Orders.vue';
+import PaymentOption from './PaymentOption.vue';
 
 
 const router = useRouter();

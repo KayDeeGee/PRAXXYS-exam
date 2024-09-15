@@ -21,7 +21,6 @@
                             </div>
                         </ion-col>
                     </ion-row>
-
                 </div>
                 <div>
                     <ion-icon :icon="ellipsisVertical" size="large" style="color:#FFC02E"></ion-icon>
@@ -35,16 +34,6 @@
                 <ion-item-option class="delete">
                         <ion-icon :icon="trashOutline" size="large" style="color:#DC3545"></ion-icon>
                 </ion-item-option>
-                 <!-- <ion-item-option>
-                    <div class="edit">
-                        <ion-icon :icon="createOutline" size="large" style="color:#FD7E14"></ion-icon>
-                    </div>
-                </ion-item-option>
-                <ion-item-option>
-                    <div class="delete">
-                        <ion-icon :icon="trashOutline" size="large" style="color:#DC3545"></ion-icon>
-                    </div> 
-                </ion-item-option>-->
             </ion-item-options>
         </ion-item-sliding>
     </ion-list>
@@ -115,9 +104,10 @@ ion-item-option {
 ion-radio {
     --border-radius: 4px;
     --inner-border-radius: 4px;
-
+    background: white;
+    border-radius: 99px;
     --color: #000000;
-    --color-checked: #6815ec;
+    --color-checked: #FFC02E;
 }
 
 ion-radio.ios::part(container) {
@@ -125,10 +115,10 @@ ion-radio.ios::part(container) {
     height: 20px;
 
     border: 2px solid #ddd;
-    border-radius: 4px;
+    border-radius: 99px;
 }
 
 .radio-checked.ios::part(container) {
-    border-color: #6815ec;
+    border-color: #FFC02E;
 }
 </style>
