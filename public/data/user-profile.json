@@ -3,6 +3,8 @@
     "name": "Chou Tzuyu",
     "contactNo": "+63 912 345 6789",
     "email": "chou.tzu-yu@gmail.commm",
+    "imgUrl": "img/profile-pic.png",
+    "loyaltyPoints": 0,
     "address": [
         {
             "id": "0",

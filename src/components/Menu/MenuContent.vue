@@ -1,20 +1,20 @@
 <template>
     <ion-menu content-id="main-content">
         <ion-content class="">
-            <div>
+            <div  v-if="profile.profile">
                 <ion-grid>
                     <ion-row class="ion-align-items-center">
                         <ion-col size="auto">
-                            <img src="/img/profile-pic.png" style="max-width: 68px;" alt="">
+                            <img :src="profile.profile.imgUrl" style="max-width: 68px;" alt="">
                         </ion-col>
                         <ion-col>
-                            o points
+                            {{ profile.profile.loyaltyPoints }} points
                         </ion-col>
                     </ion-row>
                 </ion-grid>
                 <div>
-                    <div>Name</div>
-                    <div>Number</div>
+                    <div>{{profile.profile.name}}</div>
+                    <div>{{ profile.profile.contactNo}}</div>
                 </div>
             </div>
             <ion-list lines="none">
@@ -62,10 +62,9 @@
 </template>
 
 <script setup>
-import { IonMenu, IonHeader, IonToolbar, IonTitle, IonContent, } from '@ionic/vue';
-import { defineComponent } from 'vue';
+import { useProfileStore } from '@/stores/useProfileStore';
 
-
+const profile = useProfileStore();
 </script>
 
 <style scoped>
@@ -73,6 +72,4 @@ import { defineComponent } from 'vue';
     border-bottom: 1px solid #ddd;
     margin: 10px 0;
 }
-
-
 </style>

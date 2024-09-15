@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>category</h1>
+        <h1>Category</h1>
         <swiper :slidesPerView="'auto'" :spaceBetween="16" :pagination="{
             clickable: true,
         }">
@@ -15,44 +15,26 @@
     </div>
 </template>
 
-<script>
-import { ref, onMounted } from 'vue';
+<script setup>
+import { ref } from 'vue';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 
 import 'swiper/css';
 
-export default {
-    components: { Swiper, SwiperSlide },
-    setup() {
-        const categories = ref([]);
+const categories = ref([]);
 
-        const fetchCategories = async () => {
-            try {
-                const response = await fetch('/data/category-card.json'); 
-                categories.value = await response.json();
-            } catch (error) {
-                console.error('Error fetching categories:', error);
-            }
-        };
-
-        onMounted(() => {
-            fetchCategories();
-        });
-
-        const onSwiper = (swiper) => {
-            console.log(swiper);
-        };
-        const onSlideChange = () => {
-            console.log('slide change');
-        };
-
-        return {
-            categories,
-            onSwiper,
-            onSlideChange,
-        };
-    },
+const fetchCategories = async () => {
+    try {
+        const response = await fetch('/data/category-cards.json');
+        categories.value = await response.json();
+    } catch (error) {
+        console.error('Error fetching categories:', error);
+    }
 };
+
+fetchCategories();
+
+
 </script>
 
 <style scoped>
@@ -73,5 +55,10 @@ export default {
 
 .swiper-slide {
     width: 60%;
+}
+
+h1{
+    font-size: 24px;
+    font-weight: bold;
 }
 </style>

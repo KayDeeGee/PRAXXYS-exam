@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h2>Most Popular</h2>
+        <h1>Most Popular</h1>
         <ion-grid class="ion-no-padding">
             <ion-row>
                 <ion-col v-for="item in popularItems" size="6" class="">
@@ -23,27 +23,20 @@
     </div>
 </template>
 
-<script>
-import { onMounted, ref } from 'vue';
+<script setup>
+import { ref } from 'vue';
 
-export default {
-    setup() {
-        const popularItems = ref([]);
-        const fetchPopular = async () => {
-            try {
-                const response = await fetch('/data/popular-items.json'); // Fetch from public/data
-                popularItems.value = await response.json();
-            } catch (error) {
-                console.error('Error fetching popularItems:', error);
-            }
-        };
-
-        onMounted(() => {
-            fetchPopular();
-        });
-        return { popularItems }
+const popularItems = ref([]);
+const fetchPopular = async () => {
+    try {
+        const response = await fetch('/data/popular-items.json'); // Fetch from public/data
+        popularItems.value = await response.json();
+    } catch (error) {
+        console.error('Error fetching popularItems:', error);
     }
-}
+};
+
+fetchPopular();
 </script>
 
 <style scoped>
@@ -54,7 +47,7 @@ export default {
     justify-content: center;
     align-items: center;
     margin: 20px auto 10px auto;
-    
+
 }
 
 .custom-card {
@@ -69,7 +62,7 @@ ion-col {
     padding: 3px;
 }
 
-.card-title{
+.card-title {
     font-weight: bold;
     font-size: 14px;
     margin: 0;
@@ -85,5 +78,10 @@ ion-col {
     font-size: 16px;
     margin: 0;
     color: #D71921;
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: bold;
 }
 </style>
