@@ -33,6 +33,11 @@ const routes: Array<RouteRecordRaw> = [
     props: true,
   },
   {
+    path: "/loyalty-points",
+    name: "LoyaltyPoints",
+    component: () => import("@/views/LoyaltyPoints.vue"),
+  },
+  {
     path: "/test",
     name: "TestPage",
     component: TestPage,

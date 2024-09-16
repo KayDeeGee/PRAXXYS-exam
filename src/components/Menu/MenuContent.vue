@@ -7,8 +7,8 @@
                         <ion-col size="auto">
                             <img :src="profile.profile.imgUrl" style="max-width: 68px;" alt="">
                         </ion-col>
-                        <ion-col @click="navigateTo('/home')">
-                            <ion-row class="ion-align-items-center ion-justify-content-center">
+                        <ion-col >
+                            <ion-menu-toggle @click="navigateTo('/loyalty-points')" class="ion-align-items-center ion-justify-content-center">
                                 <div>
                                     <img src="/svg/crown 1.svg" alt="" width="24px" class="ion-margin-end">
                                 </div>
@@ -18,7 +18,7 @@
                                 <div>
                                     <ion-icon :icon="chevronForward" style="color:#D71921"></ion-icon>
                                 </div>
-                            </ion-row>
+                            </ion-menu-toggle>
                         </ion-col>
                     </ion-row>
                 </ion-grid>
@@ -113,7 +113,6 @@ const router = useRouter();
 const profile = useProfileStore();
 
 const navigateTo = (path) => {
-    console.log(path, "tanginaaa");
     router.push(path);
 }
 </script>

@@ -2,7 +2,7 @@
     <ion-button expand="block" style="--background:#DC3545"  @click="setOpen(true)">Place Order</ion-button>
     <ion-modal :is-open="isOpen">
       <ion-content class="ion-padding ion-text-center">
-        <img class="ion-margin" width="160px" src="/svg/positive-vote 1.svg" alt="">
+        <img class="ion-margin" width="160px" src="/svg/positive-vote.svg" alt="">
         <h1 >Order Received!</h1>
         <p>Your order<span> No. 19049585</span> has successfully take and now being processed. Kindly wait for our notification regarding your order.</p>
       </ion-content>

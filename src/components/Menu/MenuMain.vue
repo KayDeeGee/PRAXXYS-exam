@@ -4,7 +4,7 @@
             <ion-menu-button style="color:#D71921"></ion-menu-button>
         </ion-col>
         <ion-col>
-            <ion-row class="ion-align-items-center ion-justify-content-center">
+            <ion-row class="ion-align-items-center ion-justify-content-center" @click="router.push('/loyalty-points')">
                 <div>
                     <img src="/svg/crown 1.svg" alt="" width="24px" class="ion-margin-end">
                 </div>
@@ -15,7 +15,6 @@
                     <ion-icon :icon="chevronForward" style="color:#D71921"></ion-icon>
                 </div>
             </ion-row>
-
         </ion-col>
         <ion-col size="auto" class="ion-text-end">
             <img :src="profile.profile.imgUrl" alt="" width="36px">

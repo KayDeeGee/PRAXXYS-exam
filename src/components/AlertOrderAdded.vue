@@ -19,10 +19,10 @@ const router = useRouter();
 
 const order = useOrderStore();
 const food = useFoodStore();
-const uniqueId = uuidv4();
 
 const data = {
     name: food.food.name,
+    category: food.food.category,
     imgUrl: food.food.imgUrl,
     price: food.food.price,
     quantity: props.quantity
@@ -53,7 +53,7 @@ const alertMessage = 'Successfully Added!\n\nYour order has been added to the ca
 
 <style scoped>
 .alert-head {
-    background-image: url('svg/positive-vote 1.svg');
+    background-image: url('/svg/positive-vote.svg');
     background-repeat: no-repeat;
     background-position: center;
     margin: 1rem 0;
