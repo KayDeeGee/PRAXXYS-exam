@@ -37,8 +37,6 @@ const fetchFoods = async () => {
 };
 
 fetchFoods();
-
-
 </script>
 
 <style scoped>

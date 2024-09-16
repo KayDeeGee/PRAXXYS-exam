@@ -8,36 +8,32 @@
             <h4 class="card-subtitle">{{ food.category }}</h4>
             <ion-row class="ion-justify-content-between">
                 <h3 class="card-price">P {{ food.price }}</h3>
-                rating
+                <Rating :rating="food.rating"/>
             </ion-row>
         </div>
     </div>
 </template>
 
-<script>
+<script setup>
 import { useFoodStore } from '@/stores/useFoodStore';
 import { useRouter } from 'vue-router';
+import Rating from '@/components/Rating.vue'; 
 
-export default {
-    props: {
-        food: {
-            type: Object,
-            required: true
-        }
-    },
-    setup() {
-        const foodStore = useFoodStore();
-        const router = useRouter();
-        function goToFoodDetails(food) {
-            foodStore.setFood(food);
-            router.push({ name: 'FoodDetails' });
-        }
-        return {
-            goToFoodDetails
-        };
+defineProps({
+    food: {
+        type: Object,
+        required: true
     }
+})
 
-};
+const foodStore = useFoodStore();
+const router = useRouter();
+
+function goToFoodDetails(food) {
+    foodStore.setFood(food);
+    router.push({ name: 'FoodDetails' });
+}
+
 </script>
 
 <style scoped>
@@ -48,7 +44,6 @@ export default {
     justify-content: center;
     align-items: center;
     margin: 20px auto 10px auto;
-
 }
 
 .custom-card {
@@ -58,7 +53,6 @@ export default {
     background-color: #E9ECEF;
     border-radius: 16px;
 }
-
 
 .card-title {
     font-weight: bold;
@@ -77,4 +71,6 @@ export default {
     margin: 0;
     color: #D71921;
 }
+
+
 </style>

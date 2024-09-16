@@ -2,7 +2,6 @@
 	<ion-page>
 		<ion-content class="ion-padding">
 			<MenuMain />
-
 			<ion-grid>
 				<ion-row>
 					<ion-col size="auto">
@@ -26,11 +25,10 @@
 </template>
 
 <script setup>
-import { IonPage, IonMenu, IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/vue';
+import { IonPage,  IonContent, IonSearchbar, IonGrid, IonRow, IonCol } from '@ionic/vue';
 
 import { useProfileStore } from '@/stores/useProfileStore';
 
-import { MenuContent, MenuButton } from '@/components/Menu';
 import { Category, New, SpecialOffers, Popular } from '@/components/Home';
 import CustomFAB from '@/components/CustomFAB.vue';
 import MenuMain from '@/components/Menu/MenuMain.vue';

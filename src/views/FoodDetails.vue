@@ -1,17 +1,17 @@
 <template>
     <ion-page>
-        <ion-content class="ion-padding">
-            <MenuSecond v-if="food" :headerLabel="food.category" icon="bagHandle" class="ion-padding-bottom" />
+        <ion-content class="ion-padding"  v-if="food">
+            <MenuSecond :headerLabel="food.category" icon="bagHandle" class="ion-padding-bottom" />
             <div>
                 <div class="custom-card">
                     <img class="img-container" :src="food.imgUrl" alt="">
                     <div class="favorite"></div>
                 </div>
                 <h1>{{ food.name }}</h1>
-                <div>{{ food.rating }}</div>
+                <Rating :rating="food.rating" />
                 <p>{{ food.description }}</p>
                 <ion-row class="ion-justify-content-between ion-align-items-center">
-                    <h3>P {{ food.price }}</h3>
+                    <h3 class="price">P {{ food.price * quantity }}</h3>
                     <div class="quantity-buttons">
                         <ion-icon :icon="removeOutline" @click="updateQuantity(-1)"></ion-icon>
                         <div style="font-size: 1rem; font-weight: bold;">{{ quantity || 0 }}</div>
@@ -23,7 +23,7 @@
             <AddOn />
             <div class="extra-fab-space"></div>
         </ion-content>
-        <AddToBagFAB />
+        <AddToBagFAB :quantity="quantity"/>
     </ion-page>
 </template>
 
@@ -39,6 +39,7 @@ import MenuSecond from '@/components/Menu/MenuSecond.vue';
 import Beverages from '@/components/FoodDetails/Beverages.vue';
 import AddOn from '@/components/FoodDetails/AddOn.vue'
 import AddToBagFAB from '@/components/AddToBagFAB.vue';
+import Rating from '@/components/Rating.vue';
 
 
 const foodStore = useFoodStore();
@@ -47,7 +48,7 @@ const router = useRouter();
 const food = foodStore.food;
 console.log(food)
 
-const quantity = ref(0);
+const quantity = ref(1);
 
 const updateQuantity = (action) => {
     if ((quantity.value || 0) + action < 0) return;
@@ -110,5 +111,12 @@ img {
 
 .extra-fab-space {
     height: 100px;
+}
+
+.price {
+    font-weight: bold;
+    font-size: 18px;
+    margin: 0;
+    color: #D71921;
 }
 </style>

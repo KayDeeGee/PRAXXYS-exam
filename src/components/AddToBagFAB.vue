@@ -4,12 +4,15 @@
             <h1>Order Now!</h1>
         </button>
     </div>
-    <AlertOrderAdded />
+    <AlertOrderAdded :quantity="quantity"/>
 </template>
 
 <script setup>
 import AlertOrderAdded from './AlertOrderAdded.vue';
 
+defineProps({
+    quantity: Number
+})
 </script>
 
 <style scoped>

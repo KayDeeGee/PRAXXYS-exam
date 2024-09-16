@@ -3,10 +3,9 @@
         <h1>Beverages</h1>
         <div class="custom-dropdown">
             <ion-select label="Choose Beverages" label-placement="stacked">
-                <ion-select-option value="None">Apple</ion-select-option>
-                <ion-select-option value="None">Apple</ion-select-option>
-                <ion-select-option value="banana">Banana</ion-select-option>
-                <ion-select-option value="orange">Orange</ion-select-option>
+                <ion-select-option value="Coke">Coke</ion-select-option>
+                <ion-select-option value="Sprite">Sprite</ion-select-option>
+                <ion-select-option value="Orange Juice">Orange Juice</ion-select-option>
             </ion-select>
         </div>
 
@@ -36,7 +35,7 @@ export default {
     setup() {
         const beverage = ref('None');
 
-        const selectedValue = ref(4);
+        const selectedValue = ref(0);
 
         function selectSize(value) {
             selectedValue.value = value;

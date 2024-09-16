@@ -26,17 +26,16 @@
                                     </ion-col>
                                     <ion-col>
                                         <div class="card-title"> {{ data.name }} </div>
-
                                     </ion-col>
                                 </div>
                                 <div class="ion-justify-content-between ion-align-items-end">
                                     <div>
-                                        <div class="price">P {{ data.price }}</div>
+                                        <div class="price">P {{ data.price * data.quantity }}</div>
                                     </div>
                                     <div>
                                         <div class="quantity-buttons">
                                             <ion-icon :icon="removeOutline" @click="updateQuantity(-1)"></ion-icon>
-                                            <div style="font-size: 1rem; font-weight: bold;">{{ quantity || 0 }}</div>
+                                            <div style="font-size: 1rem; font-weight: bold;">{{ data.quantity || 0 }}</div>
                                             <ion-icon :icon="addOutline" @click="updateQuantity(1)"></ion-icon>
                                         </div>
                                     </div>
@@ -67,19 +66,19 @@
 import { ref } from 'vue';
 import { ellipsisVertical, createOutline, trashOutline, addOutline, removeOutline } from 'ionicons/icons';
 
+import {useOrderStore} from '@/stores/useOrderStore';
+// const order = useOrderStore();
+
 const props = defineProps({
     data: Object,
     type: String
 });
 
-const quantity = ref(0);
-
 const updateQuantity = (action) => {
-    if ((quantity.value || 0) + action < 0) return;
+    if ((props.data.quantity || 0) + action < 0) return;
 
-    quantity.value = (quantity.value || 0) + action;
+    props.data.quantity = (props.data.quantity || 0) + action;
 }
-
 
 </script>
 

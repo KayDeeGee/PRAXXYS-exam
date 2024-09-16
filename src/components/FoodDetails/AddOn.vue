@@ -75,7 +75,7 @@ export default defineComponent({
     background: #DEE2E6;
     padding: 1rem;
 }
-
+  
 .card-title {
     font-weight: bold;
     font-size: 14px;

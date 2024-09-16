@@ -21,7 +21,7 @@
         "imgUrl": "img/sorvetes.png",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         "price": 185,
-        "rating": 5
+        "rating": 5.0
     },
     {
         "name": "Fried Chicken",
@@ -29,7 +29,7 @@
         "imgUrl": "img/fried-chicken.png",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         "price": 175,
-        "rating": 4
+        "rating": 4.0
     },
     {
         "name": "Chicken Salad",
@@ -53,7 +53,7 @@
         "imgUrl": "img/sorvetes.png",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         "price": 185,
-        "rating": 5
+        "rating": 5.0
     },
     {
         "name": "Fried Chicken",
@@ -61,6 +61,6 @@
         "imgUrl": "img/fried-chicken.png",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         "price": 175,
-        "rating": 4
+        "rating": 4.0
     }
 ]

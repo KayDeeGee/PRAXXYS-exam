@@ -10,19 +10,25 @@ import { useRouter } from 'vue-router';
 
 import { useOrderStore } from '@/stores/useOrderStore';
 import { useFoodStore } from '@/stores/useFoodStore';
+import { v4 as uuidv4 } from 'uuid';
 
+const props = defineProps({
+    quantity: Number
+})
 const router = useRouter();
 
 const order = useOrderStore();
 const food = useFoodStore();
+const uniqueId = uuidv4();
 
 const data = {
     name: food.food.name,
     imgUrl: food.food.imgUrl,
     price: food.food.price,
+    quantity: props.quantity
 }
 
-console.log(food.food.name)
+console.log(props.quantity)
 const alertButtons = [
     {
         text: 'Proceed to Checkout',
@@ -45,7 +51,7 @@ const alertMessage = 'Successfully Added!\n\nYour order has been added to the ca
 
 </script>
 
-<style>
+<style scoped>
 .alert-head {
     background-image: url('svg/positive-vote 1.svg');
     background-repeat: no-repeat;
