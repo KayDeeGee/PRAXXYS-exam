@@ -1,7 +1,7 @@
 <template>
     <ion-page>
         <ion-content class="ion-padding">
-            <MenuSecond :headerLabel="food.category" icon="bagHandle" class="ion-padding-bottom"/>
+            <MenuSecond v-if="food" :headerLabel="food.category" icon="bagHandle" class="ion-padding-bottom" />
             <div>
                 <div class="custom-card">
                     <img class="img-container" :src="food.imgUrl" alt="">
@@ -27,7 +27,7 @@
     </ion-page>
 </template>
 
-<script>
+<script setup>
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 import { useFoodStore } from '@/stores/useFoodStore';
@@ -40,43 +40,22 @@ import Beverages from '@/components/FoodDetails/Beverages.vue';
 import AddOn from '@/components/FoodDetails/AddOn.vue'
 import AddToBagFAB from '@/components/AddToBagFAB.vue';
 
-export default {
-    components: {
-        IonContent,
-        IonHeader,
-        IonMenu,
-        IonPage,
-        IonTitle,
-        IonToolbar,
-        MenuSecond,
-        Beverages,
-        AddOn,
-        AddToBagFAB
-    },
-    setup() {
-        const foodStore = useFoodStore();
-        const router = useRouter();
 
-        const food = foodStore.food;
-        console.log(food)
+const foodStore = useFoodStore();
+const router = useRouter();
 
-        const quantity = ref(0);
+const food = foodStore.food;
+console.log(food)
 
-        const updateQuantity = (action) => {
-            if ((quantity.value || 0) + action < 0) return;
+const quantity = ref(0);
 
-            quantity.value = (quantity.value || 0) + action;
-        }
+const updateQuantity = (action) => {
+    if ((quantity.value || 0) + action < 0) return;
 
-        return {
-            food,
-            router,
-            quantity,
-            addOutline, removeOutline, bagHandle, chevronBack,
-            updateQuantity
-        }
-    }
-};
+    quantity.value = (quantity.value || 0) + action;
+}
+
+
 </script>
 
 <style scoped>

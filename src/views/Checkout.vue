@@ -19,7 +19,7 @@
                         <div>Grand Total</div>
                         <div>pesos</div>
                     </ion-col>
-                    <ion-col>
+                    <ion-col size="auto">
                         <ion-button>Place Order</ion-button>
                     </ion-col>
                 </ion-row>

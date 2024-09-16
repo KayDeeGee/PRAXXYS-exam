@@ -19,6 +19,29 @@
                                     <ion-radio></ion-radio>
                                 </div>
                             </div>
+                            <div v-if="type == 'order'" class="order">
+                                <div>
+                                    <ion-col size="auto">
+                                        <div class="img-container"><img :src="data.imgUrl" alt=""></div>
+                                    </ion-col>
+                                    <ion-col>
+                                        <div class="card-title"> {{ data.name }} </div>
+
+                                    </ion-col>
+                                </div>
+                                <div class="ion-justify-content-between ion-align-items-end">
+                                    <div>
+                                        <div class="price">P {{ data.price }}</div>
+                                    </div>
+                                    <div>
+                                        <div class="quantity-buttons">
+                                            <ion-icon :icon="removeOutline" @click="updateQuantity(-1)"></ion-icon>
+                                            <div style="font-size: 1rem; font-weight: bold;">{{ quantity || 0 }}</div>
+                                            <ion-icon :icon="addOutline" @click="updateQuantity(1)"></ion-icon>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </ion-col>
                     </ion-row>
                 </div>
@@ -29,10 +52,10 @@
 
             <ion-item-options>
                 <ion-item-option class="edit">
-                        <ion-icon :icon="createOutline" size="large" style="color:#FD7E14"></ion-icon>
+                    <ion-icon :icon="createOutline" size="large" style="color:#FD7E14"></ion-icon>
                 </ion-item-option>
                 <ion-item-option class="delete">
-                        <ion-icon :icon="trashOutline" size="large" style="color:#DC3545"></ion-icon>
+                    <ion-icon :icon="trashOutline" size="large" style="color:#DC3545"></ion-icon>
                 </ion-item-option>
             </ion-item-options>
         </ion-item-sliding>
@@ -41,12 +64,22 @@
 </template>
 
 <script setup>
-import { ellipsisVertical, createOutline, trashOutline } from 'ionicons/icons';
+import { ref } from 'vue';
+import { ellipsisVertical, createOutline, trashOutline, addOutline, removeOutline } from 'ionicons/icons';
 
 const props = defineProps({
     data: Object,
     type: String
 });
+
+const quantity = ref(0);
+
+const updateQuantity = (action) => {
+    if ((quantity.value || 0) + action < 0) return;
+
+    quantity.value = (quantity.value || 0) + action;
+}
+
 
 </script>
 
@@ -73,8 +106,6 @@ const props = defineProps({
     color: #6C757D;
     font-size: 14px;
 }
-
-
 
 ion-item,
 ion-item-options {
@@ -120,5 +151,46 @@ ion-radio.ios::part(container) {
 
 .radio-checked.ios::part(container) {
     border-color: #FFC02E;
+}
+
+.img-container {
+    height: 64px;
+    width: 64px;
+    margin-right: 1rem;
+}
+
+.order>div {
+    display: flex;
+}
+
+.quantity-buttons ion-icon {
+    background: #d4d3d9;
+    color: #D71921;
+    border-radius: 14px;
+    font-weight: bold;
+    font-size: 24px;
+    padding: 6px;
+}
+
+.quantity-layout {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.quantity-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.price {
+    font-weight: bold;
+    font-size: 18px;
+    margin: 0;
+    color: #D71921;
 }
 </style>

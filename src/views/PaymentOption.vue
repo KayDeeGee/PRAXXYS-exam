@@ -19,7 +19,7 @@
                 <ion-row>
                     <ion-col class="payment-card-layout">
                         <div>
-                            <div class="card-title">Loyalty Points <span>(wewae)</span></div>
+                            <div class="card-title" v-if="profile.profile">Loyalty Points <span style="color:#D71921">({{ profile.profile.loyaltyPoints }})</span></div>
                             <div class="card-subtitle">Pay when you receive the order</div>
                         </div>
                         <div class="radio-style">
@@ -60,7 +60,9 @@
 </template>
 
 <script setup>
+import {useProfileStore} from '@/stores/useProfileStore';
 
+const profile = useProfileStore();
 </script>
 
 <style scoped>

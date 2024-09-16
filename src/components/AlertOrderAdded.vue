@@ -8,15 +8,27 @@
 import { IonAlert } from '@ionic/vue';
 import { useRouter } from 'vue-router';
 
+import { useOrderStore } from '@/stores/useOrderStore';
+import { useFoodStore } from '@/stores/useFoodStore';
+
 const router = useRouter();
 
+const order = useOrderStore();
+const food = useFoodStore();
+
+const data = {
+    name: food.food.name,
+    imgUrl: food.food.imgUrl,
+    price: food.food.price,
+}
+
+console.log(food.food.name)
 const alertButtons = [
     {
         text: 'Proceed to Checkout',
         role: 'confirm',
-
         handler: () => {
-            // store here, cart data
+            order.pushOrder(data);
             router.push('/checkout');
         },
     },

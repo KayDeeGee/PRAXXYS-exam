@@ -1,7 +1,9 @@
 <template>
     <ion-page>
+		<MenuContent />
         <ion-content>
-            <MenuSecond menuBtn="true" headerLabel="Our Foods" icon="bagHandle" class="ion-no-padding ion-padding-horizontal ion-padding-top" />
+            <MenuSecond menuBtn="true" headerLabel="Our Foods" icon="bagHandle"
+                class="ion-no-padding ion-padding-horizontal ion-padding-top" />
             <ion-searchbar class="ion-no-padding ion-padding-horizontal"></ion-searchbar>
             <CategoryFilter />
             <ion-grid class="ion-padding">
@@ -14,44 +16,32 @@
         </ion-content>
     </ion-page>
 </template>
-  
-<script>
-import { IonMenu, IonPage } from '@ionic/vue';
-import { defineComponent, onMounted, ref } from 'vue';
 
-import { bagHandle } from 'ionicons/icons';
+<script setup>
+import { IonPage } from '@ionic/vue';
+import {  ref } from 'vue';
+
 import CategoryFilter from '@/components/CategoryFilter.vue';
 import CardFood from '@/components/CardFood.vue';
+import MenuContent from '@/components/Menu/MenuContent.vue';
 import MenuSecond from '@/components/Menu/MenuSecond.vue';
 
-export default defineComponent({
-    components: {
-        IonMenu,
-        IonPage,
-        MenuSecond,
-        CategoryFilter, CardFood
-    },
-    setup() {
-        const foods = ref([]);
-        const fetchFoods = async () => {
-            try {
-                const response = await fetch('/data/our-foods.json'); 
-                foods.value = await response.json();
-            } catch (error) {
-                console.error('Error fetching foods:', error);
-            }
-        };
-
-        onMounted(() => {
-            fetchFoods();
-        });
-        return { foods, bagHandle}
+const foods = ref([]);
+const fetchFoods = async () => {
+    try {
+        const response = await fetch('/data/our-foods.json');
+        foods.value = await response.json();
+    } catch (error) {
+        console.error('Error fetching foods:', error);
     }
+};
 
-});
+fetchFoods();
+
+
 </script>
 
-<style  scoped>
+<style scoped>
 .food-cards ion-col {
     padding: 3px;
 }

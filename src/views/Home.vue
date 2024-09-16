@@ -1,6 +1,5 @@
 <template>
-	<ion-page id="main-content">
-		<MenuContent />
+	<ion-page>
 		<ion-content class="ion-padding">
 			<MenuMain />
 
